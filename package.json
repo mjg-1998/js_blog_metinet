@@ -1,0 +1,23 @@
+{
+  "name": "js_blog_metinet",
+  "version": "1.0.0",
+  "description": "blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjg-1998/js_blog_metinet.git"
+  },
+  "author": "mathilde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjg-1998/js_blog_metinet/issues"
+  },
+  "homepage": "https://github.com/mjg-1998/js_blog_metinet#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.14"
+  }
+}
