@@ -5,7 +5,10 @@ class characterFunctions {
 
     static getCharacterById(charaId) {
         return new Promise(function (resolve, reject) {
-            character.find({"_id": charaId}, function (err, charas) {
+            character.find({"_id": charaId})
+                .populate('empire')
+                .populate('mainGroup')
+                .exec( function (err, charas) {
                 if (err) {
                      reject(err);
                 }

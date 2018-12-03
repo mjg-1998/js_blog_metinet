@@ -20,16 +20,12 @@ const characterSchema = new Schema({
         trim: true
     },
     empire: {
-        type: String,
-        required: true,
-        empty: false,
-        trim: true
+        type: Schema.Types.ObjectId,
+       ref: 'Empire'
     },
     mainGroup: {
-        type: String,
-        required: true,
-        empty: false,
-        trim: true
+        type: Schema.Types.ObjectId,
+        ref: 'Group'
     },
 
     creationDate: {

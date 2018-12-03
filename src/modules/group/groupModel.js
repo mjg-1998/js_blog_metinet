@@ -1,20 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const empireSchema = new Schema({
-name: {
-    type: String,
-    required: true,
-    empty: false,
-    trim: true
-},
-    description: {
+const groupSchema = new Schema({
+    name: {
         type: String,
         required: true,
         empty: false,
         trim: true
     },
-    color: {
+    description: {
         type: String,
         required: true,
         empty: false,
@@ -32,9 +26,9 @@ name: {
     }
 });
 
-empireSchema.pre('save', function (next) {
+groupSchema.pre('save', function (next) {
     this.lastUpdate = new Date();
     next();
 });
 
-mongoose.model('Empire', empireSchema);
+mongoose.model('Group', groupSchema);
