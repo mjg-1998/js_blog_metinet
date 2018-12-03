@@ -11,3 +11,4 @@ router
     .get('/:charaId',)
 
 module.exports = router;
+//test
