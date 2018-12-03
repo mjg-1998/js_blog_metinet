@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/mjg-1998/js_blog_metinet#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.16.4",
+    "lodash": "^4.17.11",
     "mongoose": "^5.3.14"
   }
 }

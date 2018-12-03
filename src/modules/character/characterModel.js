@@ -49,4 +49,4 @@ characterSchema.pre('save', function (next) {
     next();
 });
 
-mongoose.model('character', characterSchema);
+mongoose.model('Character', characterSchema);
