@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Race = mongoose.model('Race');
+const Character = mongoose.model('Character');
 const eFunc = require('./raceFunctions');
 const _ = require('lodash');
 
@@ -60,6 +61,15 @@ class raceMiddleware {
                 message: "Cet race a été supprimé. "
             });
         });
+    }
+
+    static getAllCharacters(req,res,next){
+        Character.find({"race": req.data.race}, function(err, all) {
+            if(err){
+                next(err);
+            }
+            res.send(all);
+        })
     }
 }
 

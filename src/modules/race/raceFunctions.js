@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const race = mongoose.model('Race');
+const character = mongoose.model('Character');
 
 class raceFunctions {
 
@@ -10,6 +11,17 @@ class raceFunctions {
                     reject(err);
                 }
                 return resolve(races[0]);
+            });
+        })
+    };
+
+    static getCharasByRaceId(id) {
+        return new Promise(function (resolve, reject) {
+            character.find({"race": id}, function (err, charas) {
+                if (err) {
+                    reject(err);
+                }
+                return resolve(charas);
             });
         })
     };
