@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const empireSchema = new Schema({
+const raceSchema = new Schema({
 name: {
     type: String,
     required: true,
@@ -14,7 +14,14 @@ name: {
         empty: false,
         trim: true
     },
-    color: {
+    location: {
+        type: String,
+        required: true,
+        empty: false,
+        trim: true
+    },
+
+    power: {
         type: String,
         required: true,
         empty: false,
@@ -32,9 +39,9 @@ name: {
     }
 });
 
-empireSchema.pre('save', function (next) {
+raceSchema.pre('save', function (next) {
     this.lastUpdate = new Date();
     next();
 });
 
-mongoose.model('Empire', empireSchema);
+mongoose.model('Race', raceSchema);

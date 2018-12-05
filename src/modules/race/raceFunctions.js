@@ -1,23 +1,23 @@
 const mongoose = require('mongoose');
-const empire = mongoose.model('Empire');
+const race = mongoose.model('Race');
 
-class empireFunctions {
+class raceFunctions {
 
-    static getEmpireById(id) {
+    static getRaceById(id) {
         return new Promise(function (resolve, reject) {
-            empire.find({"_id": id}, function (err, empires) {
+            race.find({"_id": id}, function (err, races) {
                 if (err) {
                     reject(err);
                 }
-                return resolve(empires[0]);
+                return resolve(races[0]);
             });
         })
     };
 
 
-    static getAllEmpires() {
+    static getAllRaces() {
         return new Promise(function (resolve, reject) {
-            empire.find({}, function (err, allCharacters) {
+            race.find({}, function (err, allCharacters) {
                 if (err) {
                     reject(err);
                 }
@@ -27,4 +27,4 @@ class empireFunctions {
     }
 }
 
-module.exports=empireFunctions;
+module.exports=raceFunctions;

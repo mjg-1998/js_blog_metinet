@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 router.use('/character', require('./modules/character/characterRoutes'));
-router.use('/empire', require('./modules/empire/empireRoutes'));
+router.use('/race', require('./modules/race/raceRoutes'));
 router.use('/groups', require('./modules/group/groupRoutes'));
 
 

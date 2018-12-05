@@ -19,9 +19,9 @@ const characterSchema = new Schema({
         empty: false,
         trim: true
     },
-    empire: {
+    race: {
         type: Schema.Types.ObjectId,
-       ref: 'Empire'
+       ref: 'Race'
     },
     mainGroup: {
         type: Schema.Types.ObjectId,
