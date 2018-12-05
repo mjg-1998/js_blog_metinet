@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Group = mongoose.model('Group');
+const Character = mongoose.model('Character');
 const gFunc = require('./groupFunctions');
 const _ = require('lodash');
 
@@ -60,6 +61,15 @@ class groupMiddleware {
                 message: "Ce groupe a été supprimé. "
             });
         });
+    }
+
+    static getAllCharacters(req,res,next){
+        Character.find({"mainGroup": req.data.groupe}, function(err, all) {
+            if(err){
+                next(err);
+            }
+            res.send(all);
+        })
     }
 }
 

@@ -8,6 +8,9 @@ router.route('/')
     .post(gMiddleware.createAGroup);
 
 router
+    .get('/:groupId/characters', gMiddleware.getAllCharacters);
+
+router
     .get('/:groupId', gMiddleware.displayAGroup)
     .put('/:groupId', gMiddleware.modifyAGroup)
     .delete('/:groupId', gMiddleware.deleteAGroup);

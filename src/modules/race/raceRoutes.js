@@ -9,7 +9,7 @@ router.route('/')
 router
     .get('/:raceId/characters', eMiddleware.getAllCharacters);
 router
-    .get('/:raceId', eMiddleware.getAllCharacters)
+    .get('/:raceId', eMiddleware.displayAnRace)
     .put('/:raceId', eMiddleware.modifyAnRace)
     .delete('/:raceId', eMiddleware.deleteAnRace);
 
